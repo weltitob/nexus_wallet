@@ -5,6 +5,10 @@ import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:either_dart/either.dart';
 import 'package:flutter/material.dart';
+import 'package:nexus/Authenticate/authentication_service.dart';
+import 'package:nexus/Models/errorhandler.dart';
+import 'package:nexus/helpers.dart';
+import 'package:nexus/Models/user.dart';
 
 //for clean code move all code that pushes something into a repository in firebase goes in this folder
 //https://www.youtube.com/watch?v=CCPtzJH9_YA&t=962s&ab_channel=TheFlutterFairy
@@ -64,19 +68,7 @@ class UserRepository {
       return Left(ErrorHandler(message: e.toString()));
     }
   }
-
-  // Future<User> getCurrentUser(String uid) async {
-  //   final userSnapshot = await usersCollection.doc(uid).get();
-  //   if (userSnapshot.exists) {
-  //     final data = userSnapshot.data() as Map<String, dynamic>;
-  //     final User user = User.fromMap(data);
-  //     setCurrentUser = user;
-  //
-  //     listenToCurrentUser(user.did);
-  //     return user;
-  //   }
-  // }
-
+  
   Future<Either<ErrorHandler, User>> getCurrentUser(String uid) async {
     try {
       final userSnapshot = await usersCollection.doc(uid).get();

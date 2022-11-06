@@ -7,8 +7,8 @@ import 'package:nexus/Authenticate/authentication_state.dart';
 import 'package:nexus/Authenticate/restorewallet.dart';
 import 'package:nexus/Widgets/buttons.dart';
 import 'package:nexus/Widgets/textfields.dart';
+import 'package:nexus/theme.dart';
 import 'package:provider/provider.dart';
-import '../../theme.dart';
 import 'dart:math';
 
 Random random = new Random();
@@ -137,7 +137,7 @@ class _SignupScreenState extends State<SignUpView>
                     onTap: () {
                       print('Sign up pressed');
                       //generatewallet();
-                      state.registerUser(widget.code);
+                      //state.registerUser(widget.code);
                     },
                     state: state.isLoading
                         ? ButtonState.loading

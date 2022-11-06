@@ -5,8 +5,6 @@ import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:nexus/components/user_repository.dart';
 import 'package:timeago/timeago.dart';
 import 'package:get_it/get_it.dart';
-import '../components/user_repository.dart';
-
 
 //helpers for the routing?
 const String authPath = '/auth';

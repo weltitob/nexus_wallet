@@ -8,8 +8,8 @@ import 'package:nexus/Widgets/buttons.dart';
 import 'package:nexus/Widgets/textfields.dart';
 import 'package:nexus/components/user_repository.dart';
 import 'package:nexus/helpers.dart';
+import 'package:nexus/theme.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import '../../theme.dart';
 
 class RestoreWalletView extends StatefulWidget {
   @override

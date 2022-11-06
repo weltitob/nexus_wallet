@@ -32,29 +32,13 @@ class AuthenticationState extends BaseState {
     super.dispose();
   }
 
-  Future<AuthION> authION() async {
-    HttpsCallable callable = FirebaseFunctions.instance.httpsCallable('authION');
-    final resp = await callable.call(<String, dynamic>{
-      //later pass entire user relevant info then create ION account
-      // and get entire user as mydata back who is then registered
-      'username': usernameController.text,
-    });
-    final mydata = AuthION.fromJson(resp.data);
-    return mydata;
-  }
-
   void registerUser() async {
     setLoading(true);
-
-    //check and validate data the user put in
-    //final validate = formKey.currentState?.validate();
-    final iondata = await authION();
 
     // print(validate);
     // if (validate != null && validate == true && isLoading == false) {
     if (isLoading == true) {
       final user = User(
-        did: iondata.did,
         walletAdress: "",
         backgroundImageUrl: "",
         bio: "Leel",
@@ -62,7 +46,7 @@ class AuthenticationState extends BaseState {
         username: usernameController.text,
         //later dont save customToken like this
         // since it is used for logging user in later (like saving pw plain in datbase)
-        customToken: iondata.customToken,
+        customToken: "schwonz",
         profileImageUrl: "",
         // codes: codes,
         createdAt: timestamp,
