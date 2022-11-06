@@ -1,0 +1,11 @@
+[33mcommit cd41c485109c6119cbf2ae19f2ad6d84413064b5[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31mgithub/master[m[33m)[m
+Author: weltitob <weltitob@gmail.com>
+Date:   Thu Oct 20 12:15:46 2022 +0200
+
+    - Initial setup // not working sf // wait for auth updates and firebase connection needed
+
+[33mcommit 1679f5493eb0a2c0e93d1a59c701ac286ad2279d[m
+Author: weltitob <weltitob@gmail.com>
+Date:   Thu Oct 20 12:13:35 2022 +0200
+
+    - Initial setup // not working sf // wait for auth updates and firebase connection needed
