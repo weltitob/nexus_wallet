@@ -1,7 +1,8 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:nexus_wallet/homescreen.dart';
-import 'package:nexus_wallet/theme.dart';
+import 'package:nexus_wallet/pages/homescreen.dart';
+import 'package:nexus_wallet/pages/qrscreen.dart';
+import 'package:nexus_wallet/pages/settingsscreen.dart';
 
 class BottomNav extends StatefulWidget {
   const BottomNav({Key? key}) : super(key: key);
@@ -11,22 +12,27 @@ class BottomNav extends StatefulWidget {
 }
 
 class _BottomNavState extends State<BottomNav> {
-  int index = 0;
+  int _index = 0;
 
   @override
   Widget build(BuildContext context) {
     final screens = [
       const HomeScreen(),
+      const QRScreen(),
+      const SettingsScreen(),
       //BitcoinScreen(),
     ];
 
     return Scaffold(
-      body: screens[index],
+      body: screens[_index],
       bottomNavigationBar: CurvedNavigationBar(
           backgroundColor: Theme.of(context).backgroundColor,
           color: Colors.purple.shade800,
           animationDuration: const Duration(milliseconds: 300),
           onTap: (index){
+            setState(() {
+              _index = index;
+            });
           },
           items: const [
             Icon(

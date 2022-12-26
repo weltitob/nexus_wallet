@@ -35,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
             top: AppTheme.cardPadding * 3, bottom: AppTheme.cardPadding),
         children: [
           const SizedBox(height: 36),
-          Container(
+          SizedBox(
             height: 200,
             child: PageView(
               controller: _controller,
@@ -63,14 +63,17 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Text("Cryptos", style: Theme.of(context).textTheme.headline6,),
           ),
           const SizedBox(height: AppTheme.cardPadding),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              for (final currency in MockFavorites.data) ...[
-                FavoritesItem(currency: currency, context: context,),
-                const SizedBox(height: 16),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: AppTheme.cardPadding),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                for (final currency in MockFavorites.data) ...[
+                  CryptoItem(currency: currency, context: context,),
+                  const SizedBox(height: 16),
+                ],
               ],
-            ],
+            ),
           ),
           const SizedBox(height: AppTheme.cardPadding),
           Padding(
@@ -120,7 +123,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Positioned(
               top: -12,
               right: 0,
-              child: Container(
+              child: SizedBox(
                 height: 120,
                 width: 120,
                 child: LottieBuilder.network(
