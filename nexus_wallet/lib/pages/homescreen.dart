@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 import 'package:lottie/lottie.dart';
+import 'package:nexus_wallet/actions/amountscreen.dart';
+import 'package:nexus_wallet/actions/receivescreen.dart';
+import 'package:nexus_wallet/actions/sendscreen.dart';
 import 'package:nexus_wallet/components/balancecard.dart';
 import 'package:nexus_wallet/components/cryptoitem.dart';
 import 'package:nexus_wallet/theme.dart';
@@ -18,7 +21,6 @@ class _HomeScreenState extends State<HomeScreen> {
   Future<void> _handleRefresh() async {
     return await Future.delayed(const Duration(seconds: 2));
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -41,8 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
               controller: _controller,
               scrollDirection: Axis.horizontal,
               children: const [
-                BalanceCardEur(),
-                BalanceCardBtc(),
+                BalanceCardEur(), BalanceCardBtc(),
               ],
             ),
           ),
@@ -71,10 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 for (final currency in MockFavorites.data) ...[
                   CryptoItem(currency: currency, context: context,),
                   const SizedBox(height: 16),
-                ],
-              ],
-            ),
-          ),
+                ],],),),
           const SizedBox(height: AppTheme.cardPadding),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: AppTheme.cardPadding),
@@ -86,14 +84,24 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-               circButtonWidget(
-                   "Send",
-                   "https://assets7.lottiefiles.com/packages/lf20_6q3x8d8e.json",
-                   const BackgroundGradientPurple()),
-                circButtonWidget(
-                    "Receive",
-                    "https://assets10.lottiefiles.com/private_files/lf30_0vn96xcf.json",
-                    const BackgroundGradientOrange()),
+               GestureDetector(
+                onTap: () =>
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) =>
+                    const SendBTCScreen(),),),
+                 child: circButtonWidget(
+                     "Send",
+                     "https://assets7.lottiefiles.com/packages/lf20_6q3x8d8e.json",
+                     const BackgroundGradientPurple()),),
+                GestureDetector(
+                  onTap: () =>
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const ReceiveScreen(),),),
+                  child: circButtonWidget(
+                      "Receive",
+                      "https://assets10.lottiefiles.com/private_files/lf30_0vn96xcf.json",
+                      const BackgroundGradientOrange()),
+                ),
               ],
             ),
           ),
@@ -167,10 +175,7 @@ class BackgroundGradientOrange extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.centerLeft,
             end: Alignment(0.9, -0.2),
-            colors: [
-              Color(0x00FFFFFF),
-              Color(0x4DFFFFFF),
-            ],
+            colors: [Color(0x00FFFFFF), Color(0x4DFFFFFF),],
           ),
         ),
       ),
@@ -188,10 +193,8 @@ class BackgroundGradientOrange extends StatelessWidget {
           end: Alignment.bottomRight,
           stops: [0, 0.25, 0.75, 1],
           colors: [
-            Color(0x99FFFFFF),
-            Color(0x00FFFFFF),
-            Color(0x00FFFFFF),
-            Color(0x99FFFFFF),
+            Color(0x99FFFFFF), Color(0x00FFFFFF),
+            Color(0x00FFFFFF), Color(0x99FFFFFF),
           ],
         ),
       ),
@@ -211,9 +214,7 @@ class BackgroundGradientOrange extends StatelessWidget {
           child: Stack(
             children: [
               circleBottomLeft(),
-            ],
-          ),
-        ),
+            ],),),
       ),
     );
   }
@@ -255,10 +256,8 @@ class BackgroundGradientPurple extends StatelessWidget {
           end: Alignment.bottomRight,
           stops: [0, 0.25, 0.75, 1],
           colors: [
-            Color(0x99FFFFFF),
-            Color(0x00FFFFFF),
-            Color(0x00FFFFFF),
-            Color(0x99FFFFFF),
+            Color(0x99FFFFFF), Color(0x00FFFFFF),
+            Color(0x00FFFFFF), Color(0x99FFFFFF),
           ],
         ),
       ),
@@ -269,12 +268,7 @@ class BackgroundGradientPurple extends StatelessWidget {
             gradient: LinearGradient(
               begin: Alignment.bottomLeft,
               end: Alignment.topRight,
-              colors: [
-                Color(0xFF522F77),
-                Color(0xFF7127B7),
-              ],
-            ),
-          ),
+              colors: [Color(0xFF522F77), Color(0xFF7127B7),],),),
           child: Stack(
             children: [
               circleBottomLeft(),

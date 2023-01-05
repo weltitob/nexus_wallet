@@ -273,9 +273,8 @@ class _CryptoItemState extends State<CryptoItem> {
               color: Colors.transparent,
               child: InkWell(
                 onTap: () =>
-                Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) =>
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) =>
                 const BitcoinScreen(),
               ),
             ),),

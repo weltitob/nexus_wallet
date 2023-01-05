@@ -445,8 +445,8 @@ class BackgroundGradientOrange extends StatelessWidget {
           stops: [0, 0.25, 0.75, 1],
           colors: [
             Color(0x99FFFFFF),
-            Color(0x00FFFFFF),
-            Color(0x00FFFFFF),
+            AppTheme.colorPrimaryGradient,
+            AppTheme.colorBitcoin,
             Color(0x99FFFFFF),
           ],
         ),
