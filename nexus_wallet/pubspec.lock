@@ -88,12 +88,10 @@ packages:
   bdk_flutter:
     dependency: "direct main"
     description:
-      path: "."
-      ref: main
-      resolved-ref: "49eb84fdef9cc14b98fa9b7b4ad93ab52b4a5fca"
-      url: "https://github.com/LtbLightning/bdk-flutter.git"
-    source: git
-    version: "0.1.4"
+      name: bdk_flutter
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.3"
   bloc:
     dependency: "direct main"
     description:
@@ -614,7 +612,7 @@ packages:
       name: flutter_rust_bridge
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.49.1"
+    version: "1.60.0"
   flutter_screenutil:
     dependency: "direct main"
     description:
@@ -687,7 +685,7 @@ packages:
       name: freezed
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.2.1"
+    version: "2.3.2"
   freezed_annotation:
     dependency: transitive
     description:
@@ -1477,6 +1475,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.3.0"
+  tuple:
+    dependency: transitive
+    description:
+      name: tuple
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.1"
   typed_data:
     dependency: transitive
     description:

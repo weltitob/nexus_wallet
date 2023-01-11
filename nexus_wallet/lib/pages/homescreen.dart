@@ -106,11 +106,11 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           const SizedBox(height: AppTheme.cardPadding),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: AppTheme.cardPadding),
-            child: Text("Latest Activity", style: Theme.of(context).textTheme.headline6,),
-          ),
-          const SizedBox(height: AppTheme.cardPadding),
+          // Padding(
+          //   padding: const EdgeInsets.symmetric(horizontal: AppTheme.cardPadding),
+          //   child: Text("Latest Activity", style: Theme.of(context).textTheme.headline6,),
+          // ),
+          // const SizedBox(height: AppTheme.cardPadding),
         ],
       ),
     ),

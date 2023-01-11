@@ -40,10 +40,7 @@ dependencies:
     #ref: main
 
   #wallet
-  bdk_flutter:
-    git:
-      url: https://github.com/LtbLightning/bdk-flutter.git
-      ref: main
+  bdk_flutter: ^0.2.3
 
   rive: ^0.10.0
   mobile_scanner: ^2.1.0
