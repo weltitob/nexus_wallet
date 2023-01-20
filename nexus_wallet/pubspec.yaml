@@ -33,15 +33,6 @@ dependencies:
   flutter:
     sdk: flutter
 
-      #bitcoin wallet api
-      #bdk_flutter:
-      #git:
-      #url: https://github.com/LtbLightning/bdk-flutter.git
-    #ref: main
-
-  #wallet
-  bdk_flutter: ^0.2.3
-
   rive: ^0.10.0
   mobile_scanner: ^2.1.0
   page_transition: ^2.0.9

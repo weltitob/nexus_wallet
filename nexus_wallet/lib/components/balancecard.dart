@@ -139,7 +139,7 @@ class BalanceCardEur extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: AppTheme.elementSpacing,
                   vertical: AppTheme.elementSpacing / 2),
               child: Text(
-                "Simple & Secure",
+                "Simple & Fast",
                 // NumberFormat.simpleCurrency().format(MockBalance.data.last),
                 style: Theme.of(context).textTheme.bodyText2,
               ),
